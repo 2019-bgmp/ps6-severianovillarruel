@@ -1,0 +1,20 @@
+Unit test with "Unit_test.fa"
+The number of contigs is: 4
+The total length of the genome assembly is: 2901 basepairs
+The largest contig is: 1143 basepairs
+The average contig length is: 725.25 basepairs
+The mean coverage depth is: 206.19172375000002 basepairs
+The N50 if this genome assembly is: 871
+# Contig length	Number of contigs in this category
+0	0
+100	0
+200	1
+300	0
+400	0
+500	0
+600	1
+700	0
+800	1
+900	0
+1000	0
+1100	1
