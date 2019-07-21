@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+#SBATCH --partition=bgmp                          ### Partition (like a queue in PBS)
+#SBATCH --job-name=get_longest_protein      ### Job Name
+#SBATCH --output=Hi.stout                    ### File in which to store job output
+#SBATCH --error=Hi.err                       ### File in which to store job error messages
+#SBATCH --time=0-00:00:3000                        ### Wall clock time limit in Days-HH:MM:SS
+#SBATCH --nodes=1                                     ### Number of nodes needed for the job
+#SBATCH --ntasks-per-node=1                             ### Number of tasks to be launched per Node
+#SBATCH --account=bgmp                            ### Account used for job submission
+
+
+conda deactivate
+conda deactivate
+conda deactivate
+conda activate bgmp_py3
+
+/usr/bin/time -v ./ps7_zebrafish.py -i Danio_rerio.GRCz11.pep.all.oneline.fa -o Danio_rerio.GRCz11.pep.longest.oneline.fa
+/usr/bin/time -v ./ps7_human.py -i Homo_sapiens.GRCh38.pep.all.oneline.fa -o Homo_sapiens.GRCh38.pep.longest.oneline.fa
+
+conda deactivate
