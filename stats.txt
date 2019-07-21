@@ -1,54 +1,50 @@
 KMER 31
-The number of contigs is: 12277
-The total length of the genome assembly is: 2213616 basepairs
+The number of contigs is: 2259
+The total length of the genome assembly is: 1251907 basepairs
 The largest contig is: 3809 basepairs
-The average contig length is: 180.30593793271973 basepairs
-The mean coverage depth is: 36.632877466563684
-The N50 if this genome assembly is: 290
-
+The average contig length is: 554.186365648517 basepairs
+The mean coverage depth is: 74.87370553209378
+The N50 if this genome assembly is: 663
 
 KMER 41
-The number of contigs is: 5368
-The total length of the genome assembly is: 1753163 basepairs
+The number of contigs is: 1705
+The total length of the genome assembly is: 1365087 basepairs
 The largest contig is: 7443 basepairs
-The average contig length is: 326.59519374068554 basepairs
-The mean coverage depth is: 36.91364448416549
-The N50 if this genome assembly is: 827
-
+The average contig length is: 800.6375366568915 basepairs
+The mean coverage depth is: 51.59378498299118
+The N50 if this genome assembly is: 1151
 
 KMER 49
-The number of contigs is: 3172
-The total length of the genome assembly is: 1609227 basepairs
+The number of contigs is: 1741
+The total length of the genome assembly is: 1438912 basepairs
 The largest contig is: 5032 basepairs
-The average contig length is: 507.32250945775536 basepairs
-The mean coverage depth is: 41.30642823770482
-The N50 if this genome assembly is: 1062
+The average contig length is: 826.4859276278002 basepairs
+The mean coverage depth is: 42.455433587593355
+The N50 if this genome assembly is: 1215
 
 KMER COV 20x
-The number of contigs is: 426
-The total length of the genome assembly is: 396369 basepairs
-The largest contig is: 7268 basepairs
-The average contig length is: 930.443661971831 basepairs
-The mean coverage depth is: 125.69256579577477
-The N50 if this genome assembly is: 1925
-
+The number of contigs is: 918
+The total length of the genome assembly is: 1074199 basepairs
+The largest contig is: 10467 basepairs
+The average contig length is: 1170.1514161220043 basepairs
+The mean coverage depth is: 52.533780435729916
+The N50 if this genome assembly is: 1869
 
 KMER COV 60x
-The number of contigs is: 426
-The total length of the genome assembly is: 396369 basepairs
+The number of contigs is: 304
+The total length of the genome assembly is: 379420 basepairs
 The largest contig is: 7268 basepairs
-The average contig length is: 930.443661971831 basepairs
-The mean coverage depth is: 125.69256579577477
-The N50 if this genome assembly is: 1925
+The average contig length is: 1248.092105263158 basepairs
+The mean coverage depth is: 90.85588054276313
+The N50 if this genome assembly is: 2091
 
 KMER COV AUTO
-The number of contigs is: 1330
-The total length of the genome assembly is: 1193200 basepairs
+The number of contigs is: 993
+The total length of the genome assembly is: 1146359 basepairs
 The largest contig is: 10467 basepairs
-The average contig length is: 897.1428571428571 basepairs
-The mean coverage depth is: 58.14230608045102
-The N50 if this genome assembly is: 1796
-
+The average contig length is: 1154.4400805639477 basepairs
+The mean coverage depth is: 49.942906620342455
+The N50 if this genome assembly is: 1846
 
 KMER COV AUTO MIN 500 NT
 The number of contigs is: 620
