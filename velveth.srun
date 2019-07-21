@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+#SBATCH --partition=bgmp        ### Partition (like a queue in PBS)
+#SBATCH --job-name=velveth1      ### Job Name
+#SBATCH --output=Hi.out         ### File in which to store job output
+#SBATCH --error=Hi.err          ### File in which to store job error messages
+#SBATCH --time=0-01:00:00       ### Wall clock time limit in Days-HH:MM:SS
+#SBATCH --nodes=1               ### Number of nodes needed for the job
+#SBATCH --ntasks-per-node=1     ### Number of tasks to be launched per Node
+#SBATCH --account=bgmp          ### Account used for job submission
+#SBATCH --cpus-per-task=8
+conda deactivate
+conda deactivate
+conda deactivate
+conda activate bgmp_py3
+
+/usr/bin/time -v velveth /projects/bgmp/svillarr/PS/ps6/output_dir31/ 31 -fastq -shortPaired /projects/bgmp/shared/Bi621/800_3_PE5_interleaved.fq_1 /projects/bgmp/shared/Bi621/800_3_PE5_interleaved.fq_2 -fastq -short /projects/bgmp/shared/Bi621/800_3_PE5_interleaved.fq.unmatched
+/usr/bin/time -v velveth /projects/bgmp/svillarr/PS/ps6/output_dir41/ 41 -fastq -shortPaired /projects/bgmp/shared/Bi621/800_3_PE5_interleaved.fq_1 /projects/bgmp/shared/Bi621/800_3_PE5_interleaved.fq_2 -fastq -short /projects/bgmp/shared/Bi621/800_3_PE5_interleaved.fq.unmatched
+/usr/bin/time -v velveth /projects/bgmp/svillarr/PS/ps6/output_dir49/ 49 -fastq -shortPaired /projects/bgmp/shared/Bi621/800_3_PE5_interleaved.fq_1 /projects/bgmp/shared/Bi621/800_3_PE5_interleaved.fq_2 -fastq -short /projects/bgmp/shared/Bi621/800_3_PE5_interleaved.fq.unmatched
+
+conda deactivate
