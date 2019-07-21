@@ -1,0 +1,31 @@
+1. Describe how the assembly changes with different k-mer values using the assembly statistics you have collected.
+   How does the contig length distribution change?
+
+   As the kmer length increases the number of nucleotides in the genome increases.
+   I believe this is because longer kmers offer higher resolution into nosier regions (ie. lots of repeats, polymorphism, etc.).
+   In assemblies with short kmer lengths the noisy regions may be represented by just one contig, longer kmer lengths would have multiple contigs
+   representing this region, thus generating a larger asembly.
+
+   My data shows that as kmer lengths increase there are more long contigs. The reason for this is probably the same as the reason for why
+   genome assemblies that use larger contigs are bigger; there is higher resolution of the noisy genomic regions, the regions are not abstracted away.
+
+   Also N50 increases as kmer size increases. This is because there are more longer contigs.
+2. How does an increased coverage cutoff affect the assembly? What is happening to the de Bruijin graph when you change the
+   value of this parameter? How does velvet calculate its value for ‘auto’?
+
+   As coverage cutoff increase the assembly becomes smaller. Because there are many instances of only a few kmers mapping to a read
+   getting rid of these contigs results in getting rid of a lot of data. The trade off is that what is left is a more exact
+   representation of the genome.
+
+   As kmer coverage increases there are less bubles in the de Bruijin graph.
+
+   Velvet calculates auto by running the assembly using many different contig lengths. Then, based on statistics (N50, assembly size, etc.)
+   velvet determines a coverage cutoff.
+
+
+3. How does increasing minimum contig length affect your contig length distribution and N50?
+
+   Increasing the minimum contig length affects the contig length distribution in that there are no contigs smaller than the minimum contig
+   length parameter. The rest of the distribution should not change.
+
+   The N50 increases as the minimum contig length increases because the average contig length is higher.
