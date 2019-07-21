@@ -1,0 +1,51 @@
+#!/usr/bin/env bash
+#SBATCH --partition=bgmp        ### Partition (like a queue in PBS)
+#SBATCH --job-name=velvetg      ### Job Name
+#SBATCH --output=Hi.out         ### File in which to store job output
+#SBATCH --error=Hi.err          ### File in which to store job error messages
+#SBATCH --time=0-01:00:00       ### Wall clock time limit in Days-HH:MM:SS
+#SBATCH --nodes=1               ### Number of nodes needed for the job
+#SBATCH --ntasks-per-node=1     ### Number of tasks to be launched per Node
+#SBATCH --account=bgmp          ### Account used for job submission
+#SBATCH --cpus-per-task=8
+
+
+
+conda deactivate
+conda deactivate
+conda deactivate
+conda activate bgmp_py3
+/usr/bin/time -v velvetg /projects/bgmp/svillarr/PS/ps6/velvet31/ -min_contig_lgth 200 -exp_cov 61.358475
+/usr/bin/time -v velvetg /projects/bgmp/svillarr/PS/ps6/velvet41/ -min_contig_lgth 200 -exp_cov 48.51957
+/usr/bin/time -v velvetg /projects/bgmp/svillarr/PS/ps6/velvet49/ -min_contig_lgth 200 -exp_cov 38.248446
+/usr/bin/time -v velvetg /projects/bgmp/svillarr/PS/ps6/velvet20x/ -min_contig_lgth 200 -cov_cutoff 20
+/usr/bin/time -v velvetg /projects/bgmp/svillarr/PS/ps6/velvet60x/ -min_contig_lgth 200 -cov_cutoff 60
+/usr/bin/time -v velvetg /projects/bgmp/svillarr/PS/ps6/velvet_auto/ -min_contig_lgth 200 -cov_cutoff auto
+/usr/bin/time -v velvetg /projects/bgmp/svillarr/PS/ps6/velvet_min/ -min_contig_lgth 200 -cov_cutoff auto -min_contig_lgth 500
+
+
+./mkfasta_oneline.py -i /projects/bgmp/svillarr/PS/ps6/velvet31/contigs.fa -o /projects/bgmp/svillarr/PS/ps6/velvet31/contigs_oneline.fa
+./mkfasta_oneline.py -i /projects/bgmp/svillarr/PS/ps6/velvet41/contigs.fa -o /projects/bgmp/svillarr/PS/ps6/velvet41/contigs_oneline.fa
+./mkfasta_oneline.py -i /projects/bgmp/svillarr/PS/ps6/velvet49/contigs.fa -o /projects/bgmp/svillarr/PS/ps6/velvet49/contigs_oneline.fa
+./mkfasta_oneline.py -i /projects/bgmp/svillarr/PS/ps6/velvet20x/contigs.fa -o /projects/bgmp/svillarr/PS/ps6/velvet20x/contigs_oneline.fa
+./mkfasta_oneline.py -i /projects/bgmp/svillarr/PS/ps6/velvet60x/contigs.fa -o /projects/bgmp/svillarr/PS/ps6/velvet60x/contigs_oneline.fa
+./mkfasta_oneline.py -i /projects/bgmp/svillarr/PS/ps6/velvet_auto/contigs.fa -o /projects/bgmp/svillarr/PS/ps6/velvet_auto/contigs_oneline.fa
+./mkfasta_oneline.py -i /projects/bgmp/svillarr/PS/ps6/velvet_min/contigs.fa -o /projects/bgmp/svillarr/PS/ps6/velvet_min/contigs_oneline.fa
+
+echo KMER 31
+/usr/bin/time -v ./ps6_stats.py -i /projects/bgmp/svillarr/PS/ps6/velvet31/contigs_oneline.fa -k 31
+echo KMER 41
+/usr/bin/time -v ./ps6_stats.py -i /projects/bgmp/svillarr/PS/ps6/velvet41/contigs_oneline.fa -k 41
+echo KMER 49
+/usr/bin/time -v ./ps6_stats.py -i /projects/bgmp/svillarr/PS/ps6/velvet49/contigs_oneline.fa -k 49
+echo  20x
+/usr/bin/time -v ./ps6_stats.py -i /projects/bgmp/svillarr/PS/ps6/velvet20x/contigs_oneline.fa -k 49
+echo 60x
+/usr/bin/time -v ./ps6_stats.py -i /projects/bgmp/svillarr/PS/ps6/velvet60x/contigs_oneline.fa -k 49
+echo auto
+/usr/bin/time -v ./ps6_stats.py -i /projects/bgmp/svillarr/PS/ps6/velvet_auto/contigs_oneline.fa -k 49
+echo auto_min 500
+/usr/bin/time -v ./ps6_stats.py -i /projects/bgmp/svillarr/PS/ps6/velvet_min/contigs_oneline.fa -k 49
+
+
+conda deactivate
